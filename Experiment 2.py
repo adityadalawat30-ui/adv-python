@@ -1,7 +1,7 @@
 def uppercase_decorator(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        return result.upper()  # Convert result to uppercase
+        return result.upper()  
     return wrapper
 
 
@@ -11,7 +11,7 @@ class Report:
 
     @classmethod
     def from_template(cls, template):
-        return cls(template)  # Create object from a template string
+        return cls(template)  
 
     def __str__(self):
         return f"Report Title: {self.title}"
@@ -21,11 +21,9 @@ class Report:
         return f"This is the report: {self.title}"
 
 
-# Create object using class method
+
 report = Report.from_template("Annual Sales Report")
 
-# Print object (calls __str__)
 print(report)
 
-# Generate report (decorator converts output to uppercase)
 print(report.generate())
